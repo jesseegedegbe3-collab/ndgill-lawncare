@@ -24,7 +24,7 @@ const SERVICES = [
     icon: Scissors,
     title: "Lawn Mowing",
     tagline: "Tidy, even cuts every week.",
-    img: "https://images.unsplash.com/photo-1589923188900-85dae523342b",
+    img: "https://images.pexels.com/photos/6728933/pexels-photo-6728933.jpeg",
     body: "Sharp blades, consistent lines, and clippings cleared from walks and driveways. We mow to the right height for your grass type, so roots stay healthy through the summer.",
     bullets: [
       "Weekly, bi-weekly, or one-time cuts",
@@ -37,7 +37,7 @@ const SERVICES = [
     icon: Trees,
     title: "Trimming & Edging",
     tagline: "Hard lines where it counts.",
-    img: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09",
+    img: "https://images.pexels.com/photos/29288279/pexels-photo-29288279.jpeg",
     body: "Crisp edges along the driveway, sidewalk, and beds. We string-trim everything the mower can't reach — no ragged corners, no missed patches.",
     bullets: [
       "Driveway & curb edging",
@@ -50,7 +50,7 @@ const SERVICES = [
     icon: Snowflake,
     title: "Snow Removal",
     tagline: "Cleared before you head out.",
-    img: "https://images.unsplash.com/photo-1577985043696-8bd54d9f093f",
+    img: "https://images.pexels.com/photos/6952452/pexels-photo-6952452.jpeg",
     body: "Driveways, sidewalks, and front walks cleared with a snowblower or shovel — your choice. We monitor weather and show up before the first flake of traffic.",
     bullets: [
       "Per-visit clearing",
@@ -63,7 +63,7 @@ const SERVICES = [
     icon: Wind,
     title: "Spring & Fall Cleanup",
     tagline: "Start and end every season right.",
-    img: "https://images.unsplash.com/photo-1499002238440-d264edd596ec",
+    img: "https://images.pexels.com/photos/33356825/pexels-photo-33356825.jpeg",
     body: "A thorough yard reset when the season turns. Dethatch, first-of-season mow, leaf removal, and final cut. Leaves hauled — not blown into the neighbour's yard.",
     bullets: [
       "Spring dethatch & raking",

@@ -31,7 +31,7 @@ const SERVICES = [
   {
     title: "Lawn Mowing",
     href_img:
-      "https://images.unsplash.com/photo-1589923188900-85dae523342b",
+      "https://images.pexels.com/photos/6728933/pexels-photo-6728933.jpeg",
     blurb:
       "Weekly or bi-weekly cuts, bagged & blown clean. Crisp, consistent lines every visit.",
     icon: Scissors,
@@ -39,7 +39,7 @@ const SERVICES = [
   {
     title: "Trimming & Edging",
     href_img:
-      "https://images.unsplash.com/photo-1564540583246-934409427776",
+      "https://images.pexels.com/photos/29288279/pexels-photo-29288279.jpeg",
     blurb:
       "Hard edges along walkways, driveways, and beds. String-trimmed where mowers can't reach.",
     icon: Trees,
@@ -47,7 +47,7 @@ const SERVICES = [
   {
     title: "Snow Removal",
     href_img:
-      "https://images.unsplash.com/photo-1577985043696-8bd54d9f093f",
+      "https://images.pexels.com/photos/6952452/pexels-photo-6952452.jpeg",
     blurb:
       "Driveways, sidewalks, and front walks cleared before you head out. Per-visit or seasonal.",
     icon: Snowflake,
@@ -55,7 +55,7 @@ const SERVICES = [
   {
     title: "Spring & Fall Cleanup",
     href_img:
-      "https://images.unsplash.com/photo-1499002238440-d264edd596ec",
+      "https://images.pexels.com/photos/33356825/pexels-photo-33356825.jpeg",
     blurb:
       "Spring dethatch & first cut, fall leaf removal and final mow ⸺ start each season fresh.",
     icon: Wind,
