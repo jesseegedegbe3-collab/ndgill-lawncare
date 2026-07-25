@@ -189,8 +189,8 @@ export default function ReviewsPage() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Photo
-            src="https://images.unsplash.com/photo-1564540583246-934409427776"
-            alt="Neatly mowed residential lawn"
+            src="https://images.unsplash.com/photo-1517021897933-0e0319cfbc28"
+            alt="Beautiful residential yard in Winnipeg"
             ratio="21/9"
             overlay="strong"
             className="h-full w-full"
