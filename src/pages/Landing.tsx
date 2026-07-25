@@ -39,7 +39,7 @@ const SERVICES = [
   {
     title: "Trimming & Edging",
     href_img:
-      "https://images.unsplash.com/photo-1620331311520-246422fd0821",
+      "https://images.unsplash.com/photo-1564540583246-934409427776",
     blurb:
       "Hard edges along walkways, driveways, and beds. String-trimmed where mowers can't reach.",
     icon: Trees,
@@ -47,7 +47,7 @@ const SERVICES = [
   {
     title: "Snow Removal",
     href_img:
-      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09",
+      "https://images.unsplash.com/photo-1577985043696-8bd54d9f093f",
     blurb:
       "Driveways, sidewalks, and front walks cleared before you head out. Per-visit or seasonal.",
     icon: Snowflake,
@@ -55,9 +55,9 @@ const SERVICES = [
   {
     title: "Spring & Fall Cleanup",
     href_img:
-      "https://images.unsplash.com/photo-1507710650323-cd64178dfbbd",
+      "https://images.unsplash.com/photo-1499002238440-d264edd596ec",
     blurb:
-      "Spring dethatch & first cut, fall leaf removal and final mow — start each season fresh.",
+      "Spring dethatch & first cut, fall leaf removal and final mow ⸺ start each season fresh.",
     icon: Wind,
   },
 ];
@@ -500,7 +500,7 @@ function FinalCTA() {
     >
       <div className="absolute inset-0 -z-10">
         <Photo
-          src="https://images.unsplash.com/photo-1593691509543-c55fb32d8de3"
+          src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09"
           alt="Front yard in summer — Winnipeg residential property"
           ratio="21/9"
           overlay="strong"

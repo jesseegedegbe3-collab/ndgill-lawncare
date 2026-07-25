@@ -87,7 +87,7 @@ export default function ReviewsPage() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Photo
-            src="https://images.unsplash.com/photo-1593691509543-c55fb32d8de3"
+            src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09"
             alt="Beautiful Winnipeg back yard"
             ratio="21/9"
             overlay="strong"
@@ -189,7 +189,7 @@ export default function ReviewsPage() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Photo
-            src="https://images.unsplash.com/photo-1592417817038-d13fd7342606"
+            src="https://images.unsplash.com/photo-1564540583246-934409427776"
             alt="Neatly mowed residential lawn"
             ratio="21/9"
             overlay="strong"

@@ -37,7 +37,7 @@ const SERVICES = [
     icon: Trees,
     title: "Trimming & Edging",
     tagline: "Hard lines where it counts.",
-    img: "https://images.unsplash.com/photo-1620331311520-246422fd0821",
+    img: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09",
     body: "Crisp edges along the driveway, sidewalk, and beds. We string-trim everything the mower can't reach — no ragged corners, no missed patches.",
     bullets: [
       "Driveway & curb edging",
@@ -50,7 +50,7 @@ const SERVICES = [
     icon: Snowflake,
     title: "Snow Removal",
     tagline: "Cleared before you head out.",
-    img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09",
+    img: "https://images.unsplash.com/photo-1577985043696-8bd54d9f093f",
     body: "Driveways, sidewalks, and front walks cleared with a snowblower or shovel — your choice. We monitor weather and show up before the first flake of traffic.",
     bullets: [
       "Per-visit clearing",
@@ -63,7 +63,7 @@ const SERVICES = [
     icon: Wind,
     title: "Spring & Fall Cleanup",
     tagline: "Start and end every season right.",
-    img: "https://images.unsplash.com/photo-1507710650323-cd64178dfbbd",
+    img: "https://images.unsplash.com/photo-1499002238440-d264edd596ec",
     body: "A thorough yard reset when the season turns. Dethatch, first-of-season mow, leaf removal, and final cut. Leaves hauled — not blown into the neighbour's yard.",
     bullets: [
       "Spring dethatch & raking",
@@ -99,7 +99,7 @@ export default function ServicesPage() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Photo
-            src="https://images.unsplash.com/photo-1592417817038-d13fd7342606"
+            src="https://images.unsplash.com/photo-1564540583246-934409427776"
             alt="Crew maintaining a residential lawn in Winnipeg"
             ratio="21/9"
             overlay="strong"
