@@ -114,8 +114,8 @@ export default function ServicesPage() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Photo
-            src="https://images.unsplash.com/photo-1564540583246-934409427776"
-            alt="Crew maintaining a residential lawn in Winnipeg"
+            src="https://images.pexels.com/photos/27135591/pexels-photo-27135591.jpeg"
+            alt="Yard cleanup and landscaping in Winnipeg"
             ratio="21/9"
             overlay="strong"
             priority
