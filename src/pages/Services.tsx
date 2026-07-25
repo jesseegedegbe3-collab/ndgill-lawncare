@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  Calendar,
   CheckCircle2,
   Clock,
   DollarSign,
@@ -70,6 +71,20 @@ const SERVICES = [
       "Leaf removal & haul-away",
       "First and final mow of the season",
       "Bed clean-up & edging touch-up",
+    ],
+  },
+  {
+    icon: Calendar,
+    title: "Seasonal Contracts",
+    tagline: "Year-round lawn care and snow removal on one plan.",
+    img: "https://images.unsplash.com/photo-1558904541-efa843a96f01",
+    body: "Bundle your summer mowing and winter snow clearing into one predictable monthly plan. Locked-in pricing, automatic scheduling, and one familiar crew that knows your property year-round.",
+    bullets: [
+      "Locked-in monthly pricing — no surprises",
+      "Auto-scheduled mowing + snow clearing",
+      "Priority response on storms and growth spurts",
+      "Same familiar crew, all year long",
+      "Cancel anytime — month-to-month",
     ],
   },
 ];
