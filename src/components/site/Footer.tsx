@@ -61,7 +61,7 @@ export function SiteFooter() {
 }
 
 export function StickyMobileBar() {
-  return <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-background/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur xl:hidden">
+  return <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-background/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur lg:hidden">
     <a href={`tel:${SITE.phoneRaw}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-border text-sm font-semibold text-foreground"><Phone className="size-4" /> Call</a>
     <Link to="/contact" className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-primary px-2 text-sm font-semibold text-primary-foreground">Get Quote</Link>
   </div>;

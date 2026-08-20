@@ -9,7 +9,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <SiteHeader />
       <main id="main">{children}</main>
       <SiteFooter />
-      <div className="h-20 xl:hidden" aria-hidden />
+      <div className="h-20 lg:hidden" aria-hidden />
       <StickyMobileBar />
     </div>
   );

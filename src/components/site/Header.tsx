@@ -48,7 +48,7 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <nav className="hidden shrink-0 items-center gap-0.5 xl:flex" aria-label="Primary">
+          <nav className="hidden shrink-0 items-center gap-0.5 lg:flex" aria-label="Primary">
             {NAV.map((item) => (
               <NavLink key={item.to} to={item.to} end={item.to === "/"} className={({ isActive }) => cn("whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", isActive ? "text-primary" : "text-foreground/70")}>
                 {item.label}
@@ -56,7 +56,7 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="hidden shrink-0 items-center gap-3 xl:flex">
+          <div className="hidden shrink-0 items-center gap-3 lg:flex">
             <a href={`tel:${SITE.phoneRaw}`} className="inline-flex items-center gap-2 text-sm font-medium text-foreground/75 transition-colors hover:text-primary" aria-label={`Call ${SITE.phone}`}>
               <Phone className="size-4" />
               {SITE.phone}
@@ -64,13 +64,13 @@ export function SiteHeader() {
             <PrimaryCta href="/contact" className="h-11 whitespace-nowrap px-5" arrow={false}>Get a Free Quote</PrimaryCta>
           </div>
 
-          <button type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"} className="grid size-11 shrink-0 place-items-center rounded-md border border-border text-foreground xl:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <button type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"} className="grid size-11 shrink-0 place-items-center rounded-md border border-border text-foreground lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </Container>
       </header>
 
-      <div id="mobile-menu" className={cn("fixed inset-0 top-0 z-40 flex flex-col overflow-y-auto bg-background px-5 pb-8 pt-24 transition-opacity xl:hidden", open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0")} aria-hidden={!open}>
+      <div id="mobile-menu" className={cn("fixed inset-0 top-0 z-40 flex flex-col overflow-y-auto bg-background px-5 pb-8 pt-24 transition-opacity lg:hidden", open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0")} aria-hidden={!open}>
         <nav className="flex flex-col" aria-label="Mobile">
           {NAV.map((item) => (
             <NavLink key={item.to} to={item.to} end={item.to === "/"} onClick={() => setOpen(false)} className={({ isActive }) => cn("border-b border-border py-4 text-xl font-medium transition-colors hover:text-primary", isActive ? "text-primary" : "text-foreground")}>
