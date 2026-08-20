@@ -32,12 +32,16 @@ const schema = defineSchema(
       role: v.optional(roleValidator), // role of the user. do not remove
     }).index("email", ["email"]), // index for the email. do not remove or modify
 
-    // add other tables here
-
-    // tableName: defineTable({
-    //   ...
-    //   // table fields
-    // }).index("by_field", ["field"])
+    // quote requests submitted through the public contact form
+    quoteRequests: defineTable({
+      name: v.string(), // customer name
+      phone: v.string(), // callback number
+      address: v.string(), // service address
+      service: v.string(), // lawn / snow / both / cleanup / other
+      message: v.optional(v.string()), // extra notes
+      status: v.union(v.literal("new"), v.literal("contacted"), v.literal("closed")), // lead status
+      createdAt: v.number(), // epoch ms
+    }).index("by_createdAt", ["createdAt"]),
   },
   {
     schemaValidation: false,

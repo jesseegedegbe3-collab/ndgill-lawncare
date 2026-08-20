@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { useMutation } from "convex/react";
+import { api } from "@/convex/_generated/api";
 import {
   CheckCircle2,
   Loader2,
@@ -44,22 +46,32 @@ export function QuoteForm({
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [service, setService] = useState<string>("");
+  const submitQuote = useMutation(api.quoteRequests.submitQuoteRequest);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!service) {
       toast.error("Please pick a service so we can route your quote correctly.");
       return;
     }
+    const formData = new FormData(e.currentTarget);
     setSubmitting(true);
-    // Client-side handoff. In a future iteration this could call a Convex
-    // mutation `submitQuoteRequest` to persist the lead.
-    window.setTimeout(() => {
-      setSubmitting(false);
+    try {
+      await submitQuote({
+        name: String(formData.get("name") ?? "").trim(),
+        phone: String(formData.get("phone") ?? "").trim(),
+        address: String(formData.get("address") ?? "").trim(),
+        service,
+        message: String(formData.get("message") ?? "").trim() || undefined,
+      });
       setSubmitted(true);
       toast.success("Quote request received — we'll be in touch within 24 hours.");
       onSubmitted?.();
-    }, 700);
+    } catch {
+      toast.error("We couldn't send your request just now. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
