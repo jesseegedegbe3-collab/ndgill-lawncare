@@ -1,4 +1,5 @@
 /* DO NOT CHANGE */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
@@ -47,31 +48,31 @@
   --radius: 0.5rem;
 
   /* Brand: forest green primary, warm cream surfaces, stone neutrals */
-  --background: oklch(0.985 0.008 95);
-  --foreground: oklch(0.22 0.015 60);
+  --background: oklch(0.982 0.006 92);
+  --foreground: oklch(0.205 0.008 70);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.015 60);
+  --card-foreground: oklch(0.205 0.008 70);
 
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.015 60);
+  --popover-foreground: oklch(0.205 0.008 70);
 
-  --primary: oklch(0.38 0.065 145); /* deep forest green */
+  --primary: oklch(0.39 0.075 145); /* forest green brand accent */
   --primary-foreground: oklch(0.985 0 0);
 
-  --secondary: oklch(0.94 0.018 85); /* warm beige */
-  --secondary-foreground: oklch(0.28 0.02 60);
+  --secondary: oklch(0.95 0.008 88); /* warm paper */
+  --secondary-foreground: oklch(0.205 0.008 70);
 
-  --muted: oklch(0.95 0.012 85); /* light stone */
-  --muted-foreground: oklch(0.5 0.025 70);
+  --muted: oklch(0.95 0.008 88); /* light stone */
+  --muted-foreground: oklch(0.46 0.012 70);
 
-  --accent: oklch(0.92 0.024 80); /* sage cream */
-  --accent-foreground: oklch(0.28 0.02 60);
+  --accent: oklch(0.93 0.02 145); /* pale garden green */
+  --accent-foreground: oklch(0.205 0.008 70);
 
   --destructive: oklch(0.577 0.245 27.325);
 
-  --border: oklch(0.89 0.012 80);
-  --input: oklch(0.94 0.012 80);
+  --border: oklch(0.885 0.007 88);
+  --input: oklch(0.885 0.007 88);
   --ring: oklch(0.52 0.06 145);
 
   --chart-1: oklch(0.38 0.065 145); /* forest */
@@ -130,7 +131,8 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "ss01", "cv01";
+    font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
   }
   button:not([disabled]),
   [role="button"]:not([disabled]) {
@@ -152,7 +154,7 @@
     background-size: 3px 3px;
   }
   .shadow-soft {
-    box-shadow: 0 1px 2px rgba(20, 20, 20, 0.04), 0 8px 24px rgba(20, 20, 20, 0.06);
+    box-shadow: 0 1px 2px rgba(20, 20, 20, 0.04), 0 14px 30px rgba(20, 20, 20, 0.06);
   }
   .shadow-soft-lg {
     box-shadow: 0 4px 12px rgba(20, 20, 20, 0.06), 0 24px 48px rgba(20, 20, 20, 0.08);

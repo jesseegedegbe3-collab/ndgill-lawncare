@@ -29,14 +29,20 @@ export const SERVICE_AREAS = [
   "Whyte Ridge",
 ];
 
-export function BrandMark({ className, tone = "primary" }: { className?: string; tone?: "primary" | "light" }) {
+export function BrandMark({
+  className,
+  tone = "primary",
+}: {
+  className?: string;
+  tone?: "primary" | "light";
+}) {
   return (
     <span
       className={cn(
-        "relative inline-flex items-center justify-center rounded-full",
+        "relative inline-flex items-center justify-center rounded-md",
         tone === "primary"
           ? "bg-primary text-primary-foreground"
-          : "bg-primary-foreground/15 text-primary-foreground ring-1 ring-primary-foreground/20",
+          : "bg-background/10 text-background ring-1 ring-background/20",
         className,
       )}
     >
