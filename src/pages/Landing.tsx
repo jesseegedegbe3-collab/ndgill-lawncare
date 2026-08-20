@@ -1,6 +1,7 @@
 import { ArrowRight, Calendar, Check, Phone, Scissors, Snowflake, Trees, Wind } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { Photo } from "@/components/site/Photo";
+import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SITE } from "@/components/site/Brand";
 import { Container, Eyebrow, OutlineCta, PrimaryCta, Reveal, SectionHeading } from "@/components/site/ui";
@@ -11,6 +12,8 @@ const TRIM_IMG = "https://images.pexels.com/photos/29288279/pexels-photo-2928827
 const SNOW_IMG = "https://images.pexels.com/photos/6952452/pexels-photo-6952452.jpeg";
 const CLEANUP_IMG = "https://images.pexels.com/photos/33356825/pexels-photo-33356825.jpeg";
 const LANDSCAPE_AFTER_IMG = "https://images.pexels.com/photos/27135591/pexels-photo-27135591.jpeg";
+const BEFORE_IMG = "https://images.pexels.com/photos/33356825/pexels-photo-33356825.jpeg";
+const AFTER_IMG = "https://images.pexels.com/photos/27135591/pexels-photo-27135591.jpeg";
 
 const SERVICES = [
   { title: "Lawn Mowing", description: "Weekly, bi-weekly, or one-time cuts with crisp lines, clean walks, and a healthy mowing height.", icon: Scissors },
@@ -53,6 +56,8 @@ export default function Home() {
       </section>
 
       <section aria-label="Key credentials" className="border-b border-foreground/10 bg-secondary"><Container className="py-8 sm:py-10"><ul className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">{["5.0★ Google rated", "15+ homeowner reviews", "Available 24/7", "Locally owned & operated", "Fully licensed & insured"].map((item) => <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-foreground/80"><Check className="size-4 shrink-0 text-primary" />{item}</li>)}</ul></Container></section>
+
+      <section className="bg-background py-20 sm:py-28"><Container><SectionHeading eyebrow="Real results" title="One Winnipeg home, before & after ND Gill" description="A neglected yard brought back to life — the same house and the same angle, one season of care later." /><Reveal className="mt-10"><BeforeAfter before={BEFORE_IMG} after={AFTER_IMG} beforeAlt="Overgrown, neglected yard before ND Gill service" afterAlt="The same home after ND Gill lawn care and cleanup" /></Reveal><p className="mt-4 text-center text-sm text-muted-foreground">Drag the handle — or use the arrow keys — to compare the same property.</p></Container></section>
 
       <section className="overflow-hidden bg-background py-20 sm:py-28"><Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"><Reveal><Eyebrow>Our approach</Eyebrow><h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground text-balance sm:text-4xl">A better yard starts with dependable care.</h2><p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">We keep the process simple: clear pricing, a real local crew, and the same care whether you need a weekly mow or a driveway cleared before sunrise.</p><p className="mt-4 text-base leading-relaxed text-muted-foreground">We work respectfully around your property, clean up after every visit, and stay available through every Winnipeg season.</p><ul className="mt-7 grid gap-2.5 sm:grid-cols-2">{["Fast quotes, usually within 24 hours", "Friendly, reliable crew", "Lower rates than the big guys", "Lawn and snow in one plan"].map((point) => <li key={point} className="flex items-center gap-2.5 text-sm font-medium text-foreground/80"><span className="grid size-5 place-items-center rounded-full bg-accent text-primary"><Check className="size-3" strokeWidth={3} /></span>{point}</li>)}</ul><PrimaryCta href="/contact" className="mt-8">Request a free quote</PrimaryCta></Reveal><Reveal delay={0.1} className="relative"><Photo src={LANDSCAPE_AFTER_IMG} alt="Landscaped residential yard in Winnipeg" ratio="4/3" className="rounded-lg" /><div className="absolute -bottom-5 left-5 right-5 rounded-md border border-foreground/5 bg-background p-4 shadow-soft sm:left-8 sm:right-auto sm:max-w-xs"><p className="text-sm font-semibold text-foreground">One crew. Every season.</p><p className="mt-1 text-xs leading-relaxed text-muted-foreground">Summer mowing, fall cleanup, and winter snow clearing from people who know your property.</p></div></Reveal></Container></section>
 
