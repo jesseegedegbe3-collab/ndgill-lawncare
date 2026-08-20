@@ -82,6 +82,16 @@ class RootErrorBoundary extends React.Component<
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
 
+function ScrollManager() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname]);
+
+  return null;
+}
+
 function RouteSyncer() {
   const location = useLocation();
   useEffect(() => {
@@ -114,6 +124,7 @@ createRoot(document.getElementById("root")!).render(
       <ConvexAuthProvider client={convex}>
         <BrowserRouter>
           <RouteSyncer />
+          <ScrollManager />
           <Suspense fallback={<RouteLoading />}>
             <Routes>
               <Route path="/" element={<Home />} />
