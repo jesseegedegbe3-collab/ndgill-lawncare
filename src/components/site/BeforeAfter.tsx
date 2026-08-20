@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 interface BeforeAfterProps {
   before: string;
   after: string;
-  beforeAlt?: string;
   afterAlt?: string;
   className?: string;
 }
@@ -15,7 +14,7 @@ function withParams(src: string) {
   return `${src}${separator}auto=format&fit=crop&w=2000&q=75`;
 }
 
-export function BeforeAfter({ before, after, beforeAlt = "Before", afterAlt = "After", className }: BeforeAfterProps) {
+export function BeforeAfter({ before, after, afterAlt = "After", className }: BeforeAfterProps) {
   const [pos, setPos] = useState(50);
   const frameRef = useRef<HTMLDivElement>(null);
   const draggingRef = useRef(false);
