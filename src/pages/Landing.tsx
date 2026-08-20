@@ -12,8 +12,8 @@ const TRIM_IMG = "https://images.pexels.com/photos/29288279/pexels-photo-2928827
 const SNOW_IMG = "https://images.pexels.com/photos/6952452/pexels-photo-6952452.jpeg";
 const CLEANUP_IMG = "https://images.pexels.com/photos/33356825/pexels-photo-33356825.jpeg";
 const LANDSCAPE_AFTER_IMG = "https://images.pexels.com/photos/27135591/pexels-photo-27135591.jpeg";
-const BEFORE_IMG = "https://lh3.googleusercontent.com/d/1WhtnrKjR3O-Z4_BT0Opq4tIZnqGch_-9";
-const AFTER_IMG = "https://lh3.googleusercontent.com/d/1mR-CRd5vFSRf7V1YCZKL_Hc3ce7ekWg6";
+const BEFORE_IMG = "https://lh3.googleusercontent.com/d/1mR-CRd5vFSRf7V1YCZKL_Hc3ce7ekWg6";
+const AFTER_IMG = "https://lh3.googleusercontent.com/d/1WhtnrKjR3O-Z4_BT0Opq4tIZnqGch_-9";
 
 const SERVICES = [
   { title: "Lawn Mowing", description: "Weekly, bi-weekly, or one-time cuts with crisp lines, clean walks, and a healthy mowing height.", icon: Scissors },
