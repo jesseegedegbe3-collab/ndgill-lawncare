@@ -1,9 +1,5 @@
 import { ArrowRight, Calendar, Check, Phone, Scissors, Snowflake, Trees, Wind } from "lucide-react";
-import { useEffect, useState } from "react";
-import { useAction } from "convex/react";
-import { api } from "@/convex/_generated/api";
 import { SiteShell } from "@/components/site/SiteShell";
-import { BeforeAfterSlider } from "@/components/site/BeforeAfter";
 import { Photo } from "@/components/site/Photo";
 import { ReviewCard } from "@/components/site/ReviewCard";
 import { SITE } from "@/components/site/Brand";
@@ -58,8 +54,6 @@ export default function Home() {
 
       <section aria-label="Key credentials" className="border-b border-foreground/10 bg-secondary"><Container className="py-8 sm:py-10"><ul className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">{["5.0★ Google rated", "15+ homeowner reviews", "Available 24/7", "Locally owned & operated", "Fully licensed & insured"].map((item) => <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-foreground/80"><Check className="size-4 shrink-0 text-primary" />{item}</li>)}</ul></Container></section>
 
-      <GeneratedBeforeAfter />
-
       <section className="overflow-hidden bg-background py-20 sm:py-28"><Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"><Reveal><Eyebrow>Our approach</Eyebrow><h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground text-balance sm:text-4xl">A better yard starts with dependable care.</h2><p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">We keep the process simple: clear pricing, a real local crew, and the same care whether you need a weekly mow or a driveway cleared before sunrise.</p><p className="mt-4 text-base leading-relaxed text-muted-foreground">We work respectfully around your property, clean up after every visit, and stay available through every Winnipeg season.</p><ul className="mt-7 grid gap-2.5 sm:grid-cols-2">{["Fast quotes, usually within 24 hours", "Friendly, reliable crew", "Lower rates than the big guys", "Lawn and snow in one plan"].map((point) => <li key={point} className="flex items-center gap-2.5 text-sm font-medium text-foreground/80"><span className="grid size-5 place-items-center rounded-full bg-accent text-primary"><Check className="size-3" strokeWidth={3} /></span>{point}</li>)}</ul><PrimaryCta href="/contact" className="mt-8">Request a free quote</PrimaryCta></Reveal><Reveal delay={0.1} className="relative"><Photo src={LANDSCAPE_AFTER_IMG} alt="Landscaped residential yard in Winnipeg" ratio="4/3" className="rounded-lg" /><div className="absolute -bottom-5 left-5 right-5 rounded-md border border-foreground/5 bg-background p-4 shadow-soft sm:left-8 sm:right-auto sm:max-w-xs"><p className="text-sm font-semibold text-foreground">One crew. Every season.</p><p className="mt-1 text-xs leading-relaxed text-muted-foreground">Summer mowing, fall cleanup, and winter snow clearing from people who know your property.</p></div></Reveal></Container></section>
 
       <section className="bg-secondary py-20 sm:py-28"><Container><div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><SectionHeading eyebrow="What we do" title="Practical services for Winnipeg homes" description="Pick what you need today and add more any time. No confusing packages, no hard sell." /><PrimaryCta href="/contact" className="hidden shrink-0 md:inline-flex">Request a quote</PrimaryCta></div><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{SERVICES.map((service, i) => <Reveal key={service.title} delay={(i % 5) * 0.05} className="group flex flex-col rounded-lg border border-foreground/5 bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/10 hover:shadow-soft"><span className="grid size-11 place-items-center rounded-md bg-accent text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground"><service.icon className="size-5" /></span><h3 className="mt-5 text-base font-semibold tracking-tight text-foreground">{service.title}</h3><p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{service.description}</p><a href="/contact" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/65 transition-colors group-hover:text-primary">Get a quote <ArrowRight className="size-3.5" /></a></Reveal>)}</div></Container></section>
@@ -72,77 +66,5 @@ export default function Home() {
 
       <section className="bg-foreground py-20 sm:py-24"><Container className="flex flex-col items-center text-center"><Eyebrow className="text-primary-foreground/80">Free, no-obligation quotes</Eyebrow><h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-background text-balance sm:text-4xl">Ready for a yard you do not have to think about?</h2><p className="mt-4 max-w-xl text-base leading-relaxed text-background/70">Tell us what your property needs and get a free quote from a local Winnipeg crew.</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><PrimaryCta href="/contact">Get a Free Quote</PrimaryCta><OutlineCta href="/reviews" dark>Read Customer Reviews</OutlineCta></div><a href={`tel:${SITE.phoneRaw}`} className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-background/75 hover:text-background"><Phone className="size-4" /> {SITE.phone}</a></Container></section>
     </SiteShell>
-  );
-}
-
-function GeneratedBeforeAfter() {
-  const generateMatchedPair = useAction(api.landscape.generateMatchedPair);
-  const [pair, setPair] = useState<{ before: string; after: string } | null>(null);
-  const [status, setStatus] = useState<"loading" | "ready" | "fallback">("loading");
-
-  useEffect(() => {
-    let active = true;
-    const cacheKey = "nd-gill-gemini-before-after-v1";
-    const cached = sessionStorage.getItem(cacheKey);
-
-    if (cached) {
-      try {
-        const parsed = JSON.parse(cached) as { before: string; after: string };
-        if (parsed.before && parsed.after) {
-          setPair(parsed);
-          setStatus("ready");
-          return () => {
-            active = false;
-          };
-        }
-      } catch {
-        sessionStorage.removeItem(cacheKey);
-      }
-    }
-
-    generateMatchedPair({})
-      .then((generated) => {
-        if (!active) return;
-        setPair(generated);
-        setStatus("ready");
-        try {
-          sessionStorage.setItem(cacheKey, JSON.stringify(generated));
-        } catch {
-          // The comparison still works if browser storage is full or disabled.
-        }
-      })
-      .catch(() => {
-        if (active) setStatus("fallback");
-      });
-
-    return () => {
-      active = false;
-    };
-  }, [generateMatchedPair]);
-
-  const before = pair?.before ?? CLEANUP_IMG;
-  const after = pair?.after ?? LANDSCAPE_AFTER_IMG;
-
-  return (
-    <section className="bg-secondary py-12 sm:py-16">
-      <Container>
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <Eyebrow>Before & after</Eyebrow>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground text-balance sm:text-4xl">See the difference a proper yard cleanup makes.</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">Drag the handle across this matched house comparison to see the transformation from an extremely neglected yard to a professionally finished property.</p>
-          </div>
-          <span className="shrink-0 text-sm font-medium text-muted-foreground">Drag the circle to compare <ArrowRight className="ml-1 inline size-4" /></span>
-        </div>
-        <Reveal className="mt-8">
-          <BeforeAfterSlider before={before} after={after} beforeAlt="The same Winnipeg home before lawn and yard cleanup, with an extremely overgrown yard" afterAlt="The same Winnipeg home after professional lawn and yard cleanup, with a finished lawn" />
-        </Reveal>
-        <p className="mt-3 text-xs text-muted-foreground" aria-live="polite">
-          {status === "loading" && "Creating a matched Gemini image pair for this demo…"}
-          {status === "ready" && "Gemini-generated matched property comparison."}
-          {status === "fallback" && "Showing the landscaping demo pair while the generated comparison is unavailable."}
-        </p>
-      </Container>
-    </section>
   );
 }
